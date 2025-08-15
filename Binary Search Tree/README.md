@@ -68,10 +68,12 @@ Note that unbalanced trees can degrade performance to O(n), so understanding tre
 ### Example
 
 For values [10, 5, 13, 2, 7, 11, 16]:
+
    10
   /  \
  5    13
 / \   / \
+2   7   11
 ## Implementation Details
 
 ### Node Class
@@ -84,7 +86,9 @@ class Node {
     this.left = null;          // Points to left child (lesser values)
     this.count = 1;            // Tracks duplicates of the value
   }
-}class BinarySearchTree {
+}
+
+class BinarySearchTree {
   constructor() {
     this.root = null;          // Initializes an empty tree
   }
@@ -133,7 +137,10 @@ class Node {
     }
     return found;
   }
-}const BST = new BinarySearchTree();
+}
+
+
+const BST = new BinarySearchTree();
 
 console.log(BST.insert(10));
 console.log(BST.insert(10));  // Increment count for 10
@@ -144,18 +151,19 @@ console.log(BST.insert(7));   // Right of 5: 7
 console.log(BST.insert(13));  // Right of 10: 13
 console.log(BST.insert(11));  // Left of 13: 11
 console.log(BST.insert(16));  // Right of 13: 16
-console.log(BST.find(1));     // False (1 not in tree)class Node {
+console.log(BST.find(1));     // False (1 not in tree)
+
+
+class Node {
   constructor(value) {
     this.value = value;
     this.left = null;
     this.right = null;
     this.count = 1; // Optional for duplicates
   }
-}class BinarySearchTree {
-  constructor() {
-    this.root = null;
-  }
-}insert(value) {
+}
+
+insert(value) {
   let newNode = new Node(value);
   if (!this.root) {
     this.root = newNode;
@@ -181,7 +189,9 @@ console.log(BST.find(1));     // False (1 not in tree)class Node {
       current = current.right;
     }
   }
-}find(value) {
+}
+
+find(value) {
   if (!this.root) return false;
   let current = this.root;
   while (current) {
@@ -189,11 +199,15 @@ console.log(BST.find(1));     // False (1 not in tree)class Node {
     current = value < current.value ? current.left : current.right;
   }
   return false;
-}const bst = new BinarySearchTree();
+}
+
+const bst = new BinarySearchTree();
 bst.insert(10);
 bst.insert(5);
 console.log(bst.find(5)); // true
-console.log(bst.find(3)); // falsegit clone https://github.com/your-username/your-repo-name.gitcd your-repo-namenode index.js
+console.log(bst.find(3)); // false
+
+
 The improvements I made include:
 
 1. **Better Structure**: Added proper headers and a clear table of contents with anchor links
